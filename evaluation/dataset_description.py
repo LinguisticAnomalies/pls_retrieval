@@ -56,7 +56,7 @@ def main():
     """
     Usage::
         python run_pyrouge_train_val_test.py \
-            --data-path '/edata/yguo50/plain_language/pls/data/cochrane/' \
+            --data-path '../' \
             --file-name 'train' \
             --source-name 'abs_text' \
             --target-name 'pls_text' \
@@ -73,26 +73,22 @@ def main():
         "--file-name",
         required=True,
         type=str,
-        help="path importing hypo file"
+        help="trin/val/test"
     )
     parser.add_argument(
         "--source-name",
         required=True,
         type=str,
-        help="path importing target file"
+        help="source file name"
     )
     parser.add_argument(
         "--target-name",
         required=True,
         type=str,
-        help="path importing hypo file"
+        help="target file name"
     )
 
     args = parser.parse_args()
-    # df = pd.read_csv(args.data_path + args.file_name + '.csv')
-
-    # source = df[args.source_name].tolist()
-    # target = df[args.target_name].tolist()
     with open (args.data_path + args.source_name, 'r') as f:
         source = f.readlines()
     with open (args.data_path + args.target_name, 'r') as f:
