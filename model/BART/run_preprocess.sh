@@ -2,7 +2,7 @@ wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json'
 wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe'
 wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/dict.txt'
 
-TASK=/edata/yguo50/plain_language/pls/data/full_data_extract_elife_annals_medicine_reproductive/add_umls/
+TASK=../data_path
 for SPLIT in train val test
 do
   for LANG in source target
