@@ -4,11 +4,9 @@ LR=3e-05
 MAX_TOKENS=2048
 UPDATE_FREQ=32
 
-BART_PATH=./bart_model/bart.large.cnn/model.pt
-# BART_PATH=/edata/yguo50/plain_language/Plain_language_summarization/checkpoints/pubmed_small_paper_pretrained_bart_large_cnndm/checkpoint_best.pt
-PREFIX=/edata/yguo50/plain_language/pls/data/full_data_extract_elife_annals_medicine_reproductive/
-DATA_DIR=add_umls
-SAVE_DIR=/edata/yguo50/plain_language/pls/output/paragraph_lr_${LR}_${DATA_DIR}_bart_large_cnn/
+BART_PATH=../model_path/checkpointbest.pt
+DATA_DIR=../data_dir
+SAVE_DIR=../save_dir
 mkdir -p $SAVE_DIR
 CUDA_VISIBLE_DEVICES=0 fairseq-train  $PREFIX/$DATA_DIR/bin/ \
     --restore-file $BART_PATH \
