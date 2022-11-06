@@ -12,9 +12,8 @@ warnings.filterwarnings('ignore')
 os.environ["CUDA_VISIBLE_DEVICES"]="1"
 prefix = "val"
 
-data_source_path = '/homes/gws/wqiu0528/medical_plain/paragraph_level/'+prefix+'.source'
-# data_target_path = '/homes/gws/wqiu0528/medical_plain/paragraph_level/'+prefix+'.target'
-save_path = '/homes/gws/wqiu0528/medical_plain/paragraph_level/'+prefix+'_umls.json'
+data_source_path = './data_path'+prefix+'.source'
+save_path = './save_path'+prefix+'_umls.json'
 
 class NpEncoder(json.JSONEncoder):
     def default(self, obj):
