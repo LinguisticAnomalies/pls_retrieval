@@ -27,9 +27,11 @@ def main():
     """
     Usage::
 
-        python run_pyrouge_new.py \
-            --target-path '/edata/yguo50/plain_language/pls/data/cochrane/' \
-            --hypo-path '/edata/yguo50/plain_language/pls/output/' \
+        python run_pyrouge.py \
+            --target-path '../target_path' \
+            --target-file 'test.target' \
+            --hypo-path '../hypo_path' \
+            --hypo-file 'test.hypo'
     """
 
     parser = argparse.ArgumentParser()
