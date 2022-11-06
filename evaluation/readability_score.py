@@ -37,8 +37,10 @@ def main():
     Usage::
 
         python run_pyrouge_new.py \
-            --target-path '/edata/yguo50/plain_language/pls/data/cochrane/' \
-            --hypo-path '/edata/yguo50/plain_language/pls/output/' \
+            --target-path '../target_path' \
+            --hypo-path '../hypo_path' \
+            --target-file 'test.target' \
+            --hypo-file 'test.hypo'
     """
 
     parser = argparse.ArgumentParser()
