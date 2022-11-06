@@ -1,4 +1,4 @@
-# CELLS: A Parallel Corpus for Biomedical Lay Language Generation
+# Biomedical Lay Language Generation
 This repository contains data and models related to the paper: CELLS: A Parallel Corpus for Biomedical Lay Language Generation. 
 
 In particular, 
