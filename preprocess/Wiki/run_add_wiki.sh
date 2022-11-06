@@ -1,6 +1,6 @@
 python add_wiki.py \
-    --data-path /edata/yguo50/plain_language/pls/data/src_100-1000_tgt_0-700_full_data_extract_elife_annals_medicine_reproductive/ \
+    --data-path ./data_path/ \
     --data-file keywords_test.csv \
-    --output-path /edata/yguo50/plain_language/pls/data/src_100-1000_tgt_0-700_full_data_extract_elife_annals_medicine_reproductive/add_wiki/ \
+    --output-path ./output_path/ \
     --output-file test.csv \
-    --dict-path /edata/yguo50/plain_language/pls/data/wikimedia/wiki_dict.json
+    --dict-path ./wiki_dict.json
