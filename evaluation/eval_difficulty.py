@@ -8,6 +8,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
 
 def get_tags(abs_text, tag1, tag2, adj_tag, adv_tag, num_tag, conj_tag):
+    """ Return number of verbs, nouns, adjectives, adverbs, numbers, and conjuction words"""
     vb_count = []
     nn_count = []
     adj_count = []
@@ -26,6 +27,7 @@ def get_tags(abs_text, tag1, tag2, adj_tag, adv_tag, num_tag, conj_tag):
     return vb_count, nn_count, adj_count, adv_count, num_count, conj_count
 
 def get_length(para_list):
+    """ Return paragraph length in token level"""
     length = []
     for p in tqdm(para_list):
         length.append(len(word_tokenize(p)))
@@ -38,6 +40,7 @@ def get_length(para_list):
     return length
 
 def get_vocab_size(para_list):
+    """ Return vocab size of the paragraph"""
     vocab = set()
     for p in tqdm(para_list):
         for w in word_tokenize(p):
@@ -46,6 +49,7 @@ def get_vocab_size(para_list):
     return vocab
 
 def get_familiarity(abs_text, word_freq_dict):
+    """ Return word familiarity"""
     abs_lexical_familiarity = []
     for i in range(len(abs_text)):
         abs_words = nltk.word_tokenize(abs_text[i].lower())
@@ -60,12 +64,12 @@ def get_familiarity(abs_text, word_freq_dict):
 
 def main():
     """
+    Return pos of tag, length of paragraph, word familiarity, and vocab size of hypo and target texts
     Usage::
-
         python eval_difficulty.py \
-            --target-path '/edata/yguo50/plain_language/pls/data/' \
+            --target-path '../target_path/' \
             --target-file 'test.target' \
-            --hypo-path '/edata/yguo50/plain_language/pls/output/' \
+            --hypo-path '../hypo_path/' \
             --hypo-file 'test.hypo' \
     """
 
@@ -108,7 +112,7 @@ def main():
     print('Word familiarity')
     nltk.download('stopwords')
     stop_words = set(stopwords.words('english'))
-    word_freq = pd.read_csv('/edata/yguo50/plain_language/pls/evaluation/simplification/wikiidf_terms.csv')
+    word_freq = pd.read_csv('./wikiidf_terms.csv')
     word_freq_dict = {}
     for i in range(len(word_freq)):
         word_freq_dict[word_freq['token'][i]] = word_freq['idf'][i]
