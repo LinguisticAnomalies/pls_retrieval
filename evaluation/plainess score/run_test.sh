@@ -1,6 +1,6 @@
 export CUDA_VISIBLE_DEVICES=0
-MODEL_PATH=/edata/yguo50/pls/output/src_100-1000_tgt_0-700_full_data_extract_elife_annals_medicine_reproductive_ordered_pairs_FixedROUGE/source_target_classification/
-DATA_PATH=/edata/yguo50/pls/data/src_100-1000_tgt_0-700_full_data_extract_elife_annals_medicine_reproductive_ordered_pairs_FixedROUGE/source_target_classification
+MODEL_PATH=./model_path
+DATA_PATH=./data_path
 mkdir ${MODEL_PATH}input0/
 cp ${DATA_PATH}-bin/input0/dict.*  ${MODEL_PATH}input0/
 python test.py \
