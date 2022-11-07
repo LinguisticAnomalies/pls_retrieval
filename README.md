@@ -1,15 +1,13 @@
 # Biomedical Lay Language Generation
 This repository contains data and models related to the paper: CELLS: A Parallel Corpus for Biomedical Lay Language Generation. 
 
-In particular, 
-
 ## Datasets
 The CELL dataset and the datasets for simplification and background explanation can be found in "./data".
 
 The "xxx.source" files include the scientific text. The "xxx.target" files include the plain language text.
 Follow the instructions [here](https://github.com/qiuweipku/Plain_language_summarization) to construct the PubMed dataset for BART pre-training.
 
-## Model
+## Models
 ### BART
 For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq/tree/master/examples/bart) implementation. Download the BART model pretrained on CNN/DM dataset from [here](https://dl.fbaipublicfiles.com/fairseq/models/bart.large.cnn.tar.gz).
 
