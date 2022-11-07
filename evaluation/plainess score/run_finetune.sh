@@ -5,11 +5,11 @@ NUM_CLASSES=2           # Number of classes for the classification task.
 MAX_SENTENCES=16         # Batch size.
 UPDATE_FREQ=8
 ROBERTA_PATH=./roberta.large/model.pt
-SAVE_DIR=/edata/yguo50/pls/output/src_100-1000_tgt_0-700_full_data_extract_elife_annals_medicine_reproductive_ordered_pairs_FixedROUGE/source_target_classification_10_150/
+SAVE_DIR=./save_dir
 mkdir -p $SAVE_DIR
 
 
-CUDA_VISIBLE_DEVICES=0 fairseq-train /edata/yguo50/pls/data/src_100-1000_tgt_0-700_full_data_extract_elife_annals_medicine_reproductive_ordered_pairs_FixedROUGE/source_target_classification_10_150-bin \
+CUDA_VISIBLE_DEVICES=0 fairseq-train ./data_dir \
     --restore-file $ROBERTA_PATH \
     --max-positions 512 \
     --batch-size $MAX_SENTENCES \
@@ -32,14 +32,3 @@ CUDA_VISIBLE_DEVICES=0 fairseq-train /edata/yguo50/pls/data/src_100-1000_tgt_0-7
     --update-freq $UPDATE_FREQ \
     --save-dir $SAVE_DIR \
     > $SAVE_DIR/train.log
-
-
-
-        # --max-tokens 4400 \
-    # --regression-target \
-            # --fp16 --fp16-init-scale 4 --threshold-loss-scale 1 --fp16-scale-window 128 \
-                # --num-classes $NUM_CLASSES \
-        # SAVE_DIR=/edata/yguo50/output/src_100-1000_tgt_0-700_full_data_extract_elife_annals_medicine_reproductive_ordered_pairs/sentence_classification_binary/
-    # --criterion cross_entropy
-    #     --no-epoch-checkpoints \
-    # --best-checkpoint-metric loss \
