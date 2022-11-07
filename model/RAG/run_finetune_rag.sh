@@ -6,7 +6,7 @@ DATA_DIR="./data_dir"
 OUTPUT_DIR="./output_dir"
 MODEL_NAME_OR_PATH="./model_path/"
 
-python /edata/yguo50/plain_language/pls/transformers/examples/research_projects/rag/finetune_rag.py \
+python ./transformers/examples/research_projects/rag/finetune_rag.py \
     --data_dir $DATA_DIR \
     --output_dir $OUTPUT_DIR \
     --model_name_or_path $MODEL_NAME_OR_PATH \
