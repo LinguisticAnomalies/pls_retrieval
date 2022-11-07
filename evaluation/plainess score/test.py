@@ -12,31 +12,7 @@ def generate(roberta, infile, outfile="roberta_hypo.txt", bsz=32, n_obs=None, cl
     label_fn = lambda label: roberta.task.label_dictionary.string(
     [label + roberta.task.label_dictionary.nspecial]
     )
-    # if n_obs is not None: bsz = min(bsz, n_obs)
-
-    # with open(infile) as source, open(outfile, "w") as fout:
-    #     sline = source.readline().strip()
-    #     slines = [sline]
-    #     for sline in tqdm(source):
-    #         if n_obs is not None and count > n_obs:
-    #             break
-    #         if count % bsz == 0:
-    #             tokens = roberta.encode(slines)
-    #             pred = label_fn(roberta.predict(args.classification_head_name, tokens).argmax())
-    #             for hypothesis in pred:
-    #                 fout.write(hypothesis + "\n")
-    #                 fout.flush()
-    #             slines = []
-
-    #         slines.append(sline.strip())
-    #         count += 1
-
-    #     if slines != []:
-    #         tokens = roberta.encode(slines)
-    #         pred = label_fn(roberta.predict(args.classification_head_name, tokens).argmax())
-    #         for hypothesis in pred:
-    #             fout.write(hypothesis + "\n")
-    #             fout.flush()
+   
     output = []
     with open(infile) as source_file:
         source = [s.strip() for s in source_file.readlines()]
