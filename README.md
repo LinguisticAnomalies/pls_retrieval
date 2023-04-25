@@ -1,6 +1,9 @@
 # Biomedical Lay Language Generation
 This repository contains data and models related to the paper: CELLS: A Parallel Corpus for Biomedical Lay Language Generation. 
 
+## Updates
+04/24/2023 Upload metadata for CELLS dataset. Title and journal name are available now!
+
 ## Datasets
 The CELL dataset and the datasets for simplification and background explanation can be found in "./data".
 
