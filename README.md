@@ -2,6 +2,7 @@
 This repository contains data and models related to the paper: CELLS: A Parallel Corpus for Biomedical Lay Language Generation. 
 
 ## Updates
+05/05/2023 Update wiki_dict.json file! Click [here](https://drive.google.com/file/d/1c0nz577gaghbP0GlRfRhOy8EyuSdpHZO/view?usp=share_link) to download it.
 04/24/2023 Upload metadata for CELLS dataset. Title and journal name are available now!
 
 ## Datasets
