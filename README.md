@@ -1,7 +1,9 @@
 # Biomedical Lay Language Generation
-This repository contains data and models related to the paper: CELLS: A Parallel Corpus for Biomedical Lay Language Generation. 
+This repository contains data and models related to the paper: [Retrieval augmentation of large language models for lay language generation](https://www.sciencedirect.com/science/article/pii/S1532046423003015?dgcid=author). This paper was arxived as CELLS: A Parallel Corpus for Biomedical Lay Language Generation. 
 
 ## Updates
+01/18/2024 Paper was accepted by Journal of Biomedical Informatics. Check the latest version with GPT-4 and Llama-2 here: [Retrieval augmentation of large language models for lay language generation](https://www.sciencedirect.com/science/article/pii/S1532046423003015?dgcid=author)
+
 05/01/2023 Update wiki_dict.json file! Click [here](https://drive.google.com/file/d/1c0nz577gaghbP0GlRfRhOy8EyuSdpHZO/view?usp=share_link) to download it.
 
 04/24/2023 Upload metadata for CELLS dataset. Title and journal name are available now!
