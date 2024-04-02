@@ -9,10 +9,13 @@ This repository contains data and models related to the paper: [Retrieval augmen
 04/24/2023 Upload metadata for CELLS dataset. Title and journal name are available now!
 
 ## Datasets
-The CELL dataset and the datasets for simplification and background explanation can be found in "./data".
+Datasets can be found in "./data". The "xxx.source" files include the scientific text, while the "xxx.target" files include the plain language text. Follow the instructions [here](https://github.com/qiuweipku/Plain_language_summarization) to construct the PubMed dataset for BART pre-training.
 
-The "xxx.source" files include the scientific text. The "xxx.target" files include the plain language text.
-Follow the instructions [here](https://github.com/qiuweipku/Plain_language_summarization) to construct the PubMed dataset for BART pre-training.
+Datasets for different applications (details can be found in 3.1.2 Dataset applications):
+- CELLS: The paragraph-paired data of scientific abstracts and plain language summaries for the lay language generation task.
+- BELLS: The paragraph segment-paired data for background explanations.
+- SELLS: The sentence-level paired data for simplification.
+- Validated dataset: Randomly sampled data annotated by annotators for background explanations and simplification.
 
 ## Models
 ### BART
@@ -29,6 +32,19 @@ Definition-based explanation retrieval with Wikipedia: run "./preprocess/Wiki/ru
 For BART model, we use the [Huggingface](https://huggingface.co/docs/transformers/model_doc/rag) implementation. 
 
 Follow the instructions [here](https://github.com/huggingface/transformers/tree/main/examples/research_projects/rag) to finetune BART model on CELL data. The hyperparameters for RAG can be found in "./model/RAG/"
+
+### LLMs
+To evaluate the performance of LLMs in generating background explanations or plain language summaries, we utilized Llama 2 (Llama-2-70B-chat) and GPT-4 (accessed in September 2023). We explored two prompts:
+
+- "Summarize in plain language: input"
+- "Summarize in plain language, providing necessary explanations: input"
+
+To further assess the impact of the retrieval-augmented approach on LLMs, we established two settings for input:
+
+- The source alone
+- The source combined with Wikipedia definitions as identified using KeyBERT
+
+The generation process was configured with a maximum length of 150 tokens. All other parameters were set to their default values.
 
 
 ## Checkpoints
